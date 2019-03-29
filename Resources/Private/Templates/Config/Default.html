@@ -51,7 +51,6 @@
         .bp-config {
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
             font-size: 13px;
-            display: flex;
             position: fixed;
             right: 0;
             top: 0;
@@ -67,8 +66,9 @@
             margin: 0;
             background-color: #ffffff;
             box-shadow: -5px 0 15px -1px rgba(0,0,0,.1);
-            position: relative;
+            position: absolute;
             top: 15%;
+            right: 0;
             border-radius: 5px 0 0 5px
         }
         .bp-config-toggle-label svg {
@@ -84,7 +84,13 @@
         }
         .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label {
             color: #ffffff;
-            background-color: #dc3545
+            background-color: #dc3545;
+            right: calc(100vw - 36px);
+        }
+        @media (min-width: 420px) {
+            .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label {
+                right: 350px;
+            }
         }
         .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label .bp-config-toggle-label-open {
             display: none!important;
@@ -94,7 +100,6 @@
         }
         .bp-config-toggle-checkbox:checked ~ .bp-config-panel {
             display: block!important;
-            margin-right: 0;
         }
         .bp-title {
             padding: 25px;
@@ -105,12 +110,21 @@
             font-weight: bold;
         }
         .bp-config-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
             overflow: auto;
-            width: 350px;
-            margin-right: -350px;
+            width: calc(100vw - 36px);
+            display: none;
             height: 100%;
             background-color: #ffffff;
             box-shadow: -5px 0 15px -1px rgba(0,0,0,.1)
+        }
+        @media (min-width: 420px) {
+            .bp-config-panel {
+                left: auto;
+                width: 350px;
+            }
         }
         .bp-panel-body + .bp-panel-body {
             border-top: 1px solid #f2f2f2;
