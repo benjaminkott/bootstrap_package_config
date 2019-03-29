@@ -1,0 +1,62 @@
+##############
+### COLORS ###
+##############
+[request.getQueryParams()['color'] == 'blue']
+    plugin.bootstrap_package.settings.scss.primary = #007bff
+[global]
+[request.getQueryParams()['color'] == 'indigo']
+    plugin.bootstrap_package.settings.scss.primary = #6610f2
+[global]
+[request.getQueryParams()['color'] == 'purple']
+    plugin.bootstrap_package.settings.scss.primary = #6f42c1
+[global]
+[request.getQueryParams()['color'] == 'pink']
+    plugin.bootstrap_package.settings.scss.primary = #e83e8c
+[global]
+[request.getQueryParams()['color'] == 'red']
+    plugin.bootstrap_package.settings.scss.primary = #dc3545
+[global]
+[request.getQueryParams()['color'] == 'orange']
+    plugin.bootstrap_package.settings.scss.primary = #fd7e14
+[global]
+[request.getQueryParams()['color'] == 'yellow']
+    plugin.bootstrap_package.settings.scss.primary = #ffc107
+[global]
+[request.getQueryParams()['color'] == 'green']
+    plugin.bootstrap_package.settings.scss.primary = #28a745
+[global]
+[request.getQueryParams()['color'] == 'teal']
+    plugin.bootstrap_package.settings.scss.primary = #20c997
+[global]
+[request.getQueryParams()['color'] == 'cyan']
+    plugin.bootstrap_package.settings.scss.primary = #17a2b8
+[global]
+
+
+#############
+### FONTS ###
+#############
+[request.getQueryParams()['font'] == 'lora']
+    page.theme.googleFont.font = Lora
+[global]
+[request.getQueryParams()['font'] == 'merriweather']
+    page.theme.googleFont.font = Merriweather
+[global]
+[request.getQueryParams()['font'] == 'nunito']
+    page.theme.googleFont.font = Nunito
+[global]
+[request.getQueryParams()['font'] == 'raleway']
+    page.theme.googleFont.font = Raleway
+[global]
+[request.getQueryParams()['font'] == 'roboto']
+    page.theme.googleFont.font = Roboto
+[global]
+[request.getQueryParams()['font'] == 'source-sans-pro']
+    page.theme.googleFont.font = Source Sans Pro
+[global]
+[request.getQueryParams()['font'] == 'quattrocento']
+    page.theme.googleFont.font = Quattrocento
+[global]
+[request.getQueryParams()['font'] == 'ubuntu']
+    page.theme.googleFont.font = Ubuntu
+[global]

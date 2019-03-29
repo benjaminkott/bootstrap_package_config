@@ -1,0 +1,70 @@
+{
+    "name": "bk2k/bootstrap-package-config",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "keywords": [
+      "TYPO3 CMS"
+    ],
+    "homepage": "https://github.com/benjaminkott/bootstrap_package_config",
+    "authors": [
+      {
+        "name": "Benjamin Kott",
+        "email": "info@bk2k.info",
+        "role": "Developer",
+        "homepage": "http://www.bk2k.info/"
+      }
+    ],
+    "license": "MIT",
+    "support": {
+      "issues": "https://github.com/benjaminkott/bootstrap_package_config/issues"
+    },
+    "require": {
+      "php": ">=7.0.0",
+      "bk2k/bootstrap-package": "dev-master",
+      "typo3/cms-core": "^9.5"
+    },
+    "require-dev": {
+      "friendsofphp/php-cs-fixer": "^2.3.1",
+      "bk2k/extension-helper": "^1.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "BK2K\\BootstrapPackageConfig\\": "Classes"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "BK2K\\BootstrapPackageConfig\\Tests\\": "Tests"
+      }
+    },
+    "config": {
+      "optimize-autoloader": true,
+      "vendor-dir": ".build/vendor",
+      "bin-dir": ".build/bin"
+    },
+    "scripts": {
+      "test:php:unit": [
+        "@php .build/vendor/phpunit/phpunit/phpunit -c Build/phpunit.xml"
+      ],
+      "test": [
+        "@test:php:unit"
+      ],
+      "set-version": [
+        "extension-helper version:set"
+      ],
+      "changelog": [
+        "extension-helper changelog:create"
+      ],
+      "post-autoload-dump": [
+        "mkdir -p .build/web/typo3conf/ext/",
+        "[ -L .build/web/typo3conf/ext/bootstrap_package_config ] || ln -snvf ../../../../. .build/web/typo3conf/ext/bootstrap_package_config"
+      ]
+    },
+    "extra": {
+      "typo3/cms": {
+        "cms-package-dir": "{$vendor-dir}/typo3/cms",
+        "web-dir": ".build/web"
+      }
+    }
+  }
+  

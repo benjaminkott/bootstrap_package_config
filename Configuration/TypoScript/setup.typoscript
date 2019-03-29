@@ -1,0 +1,131 @@
+############
+### PAGE ###
+############
+page.1553801170 = FLUIDTEMPLATE
+page.1553801170 {
+    templateName = Default
+    templateRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Templates/Config/
+    }
+    partialRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Partials/Config/
+    }
+    layoutRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Layouts/Config/
+    }
+    variables {
+        currentColor = TEXT
+        currentColor {
+            data = gp:color
+        }
+        currentFont = TEXT
+        currentFont {
+            data = gp:font
+        }
+        currentConfig = TEXT
+        currentConfig.value (
+plugin.bootstrap_package.settings.scss {
+    primary = {$plugin.bootstrap_package.settings.scss.primary}
+}
+page.theme.googleFont {
+    font = {$page.theme.googleFont.font}
+}
+        )
+    }
+    settings {
+        colors {
+            1 {
+                name = Blue
+                value = blue
+                color = #007bff
+            }
+            2 {
+                name = Indigo
+                value = indigo
+                color = #6610f2
+            }
+            3 {
+                name = Purple
+                value = purple
+                color = #6f42c1
+            }
+            4 {
+                name = Pink
+                value = pink
+                color = #e83e8c
+            }
+            5 {
+                name = Red
+                value = red
+                color = #dc3545
+            }
+            6 {
+                name = Orange
+                value = orange
+                color = #fd7e14
+            }
+            7 {
+                name = Yellow
+                value = yellow
+                color = #ffc107
+            }
+            8 {
+                name = Green
+                value = green
+                color = #28a745
+            }
+            9 {
+                name = Teal
+                value = teal
+                color = #20c997
+            }
+            10 {
+                name = Cyan
+                value = cyan
+                color = #17a2b8
+            }
+        }
+        fonts {
+            1 {
+                name = Lora
+                value = lora
+            }
+            2 {
+                name = Merriweather
+                value = merriweather
+            }
+            3 {
+                name = Nunito
+                value = nunito
+            }
+            4 {
+                name = Raleway
+                value = raleway
+            }
+            5 {
+                name = Roboto
+                value = roboto
+            }
+            6 {
+                name =  Source Sans Pro
+                value =  source-sans-pro
+            }
+            7 {
+                name =  Quattrocento
+                value =  quattrocento
+            }
+            8 {
+                name =  Ubuntu
+                value =  ubuntu
+            }
+        }
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    linkVars = color,font
+}
