@@ -1,0 +1,175 @@
+<div class="bp-config">
+    <input class="bp-config-toggle-checkbox" id="bp-config-toggle" type="checkbox" value="1" />
+    <label  class="bp-config-toggle-label" for="bp-config-toggle">
+        <svg class="bp-config-toggle-label-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g fill="currentColor"><path d="M14.413 9.393l-.865-.5c.046-.291.077-.588.077-.893s-.031-.602-.078-.893l.865-.5a1 1 0 0 0 .366-1.366l-1-1.732a1 1 0 0 0-1.366-.366l-.86.497A5.616 5.616 0 0 0 10 2.748V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v.748a5.641 5.641 0 0 0-1.552.892l-.861-.497a1 1 0 0 0-1.366.366l-1 1.732a1 1 0 0 0 .366 1.366l.865.5c-.046.291-.077.588-.077.893s.031.602.078.893l-.865.5a1 1 0 0 0-.366 1.366l1 1.732a1 1 0 0 0 1.366.366l.861-.497c.461.376.985.676 1.551.892V14a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.748a5.641 5.641 0 0 0 1.552-.892l.861.497a1 1 0 0 0 1.366-.366l1-1.732a1 1 0 0 0-.366-1.366zm-1.5 2.598l-1.515-.875A4.599 4.599 0 0 1 9 12.51V14H7v-1.49a4.599 4.599 0 0 1-2.398-1.394l-1.515.875-1-1.732 1.521-.878C3.47 8.942 3.375 8.484 3.375 8s.095-.942.233-1.381l-1.521-.878 1-1.732 1.515.875A4.599 4.599 0 0 1 7 3.49V2h2v1.49a4.599 4.599 0 0 1 2.398 1.394l1.515-.875 1 1.732-1.521.878c.138.439.233.897.233 1.381s-.095.942-.233 1.381l1.521.878-1 1.732z"></path><path d="M8 5.875c1.172 0 2.125.953 2.125 2.125S9.172 10.125 8 10.125 5.875 9.172 5.875 8 6.828 5.875 8 5.875m0-1a3.125 3.125 0 1 0 0 6.25 3.125 3.125 0 0 0 0-6.25z"></path></g></svg>
+        <svg class="bp-config-toggle-label-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M11.9 5.5L9.4 8l2.5 2.5c.2.2.2.5 0 .7l-.7.7c-.2.2-.5.2-.7 0L8 9.4l-2.5 2.5c-.2.2-.5.2-.7 0l-.7-.7c-.2-.2-.2-.5 0-.7L6.6 8 4.1 5.5c-.2-.2-.2-.5 0-.7l.7-.7c.2-.2.5-.2.7 0L8 6.6l2.5-2.5c.2-.2.5-.2.7 0l.7.7c.2.2.2.5 0 .7z"></path></svg>
+    </label>
+    <div class="bp-config-panel">
+        <div class="bp-title">
+            Bootstrap Package
+        </div>
+        <div class="bp-panel-body">
+            <div class="bp-panel-headline">
+                Colors
+            </div>
+            <ul class="bp-panel-list bp-panel-list-columns">
+                <f:for each="{settings.colors}" as="color">
+                    <div class="bp-panel-list-item{f:if(condition: '{currentColor} == {color.value}', then: ' bp-panel-list-item-active')}">
+                        <f:link.page class="bp-panel-list-item-link" addQueryString="1" additionalParams="{color: color.value}">
+                            <span class="bp-panel-list-item-link-colorbox" style="background-color: {color.color}"></span>
+                            <span class="bp-panel-list-item-link-name">{color.name}</span>
+                        </f:link.page>
+                    </div> 
+                </f:for>
+            </ul>
+        </div>
+        <div class="bp-panel-body">
+            <div class="bp-panel-headline">
+                Fonts
+            </div>
+            <ul class="bp-panel-list">
+                <f:for each="{settings.fonts}" as="font">
+                    <div class="bp-panel-list-item{f:if(condition: '{currentFont} == {font.value}', then: ' bp-panel-list-item-active')}">
+                        <f:link.page class="bp-panel-list-item-link" addQueryString="1" additionalParams="{font: font.value}">
+                            <span class="bp-panel-list-item-link-name">{font.name}</span>
+                        </f:link.page>
+                    </div> 
+                </f:for>
+            </ul>
+        </div>
+        <div class="bp-panel-body">
+            <div class="bp-panel-headline">
+                TypoScript Constants
+            </div>
+            <pre class="bp-panel-config"><code>{currentConfig}</code></pre>
+        </div>
+    </div>
+</div>
+
+<f:section name="FooterAssets">
+    <style type="text/css">
+        .bp-config {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+            font-size: 13px;
+            display: flex;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            max-width: 100%;
+        }
+        .bp-config-toggle-label {
+            cursor: pointer;
+            width: 36px;
+            height: 48px;
+            padding: 16px 10px;
+            margin: 0;
+            background-color: #ffffff;
+            box-shadow: -5px 0 15px -1px rgba(0,0,0,.1);
+            position: relative;
+            top: 15%;
+            border-radius: 5px 0 0 5px
+        }
+        .bp-config-toggle-label svg {
+            display: block;
+            height: 16px;
+            width: 16px;
+        }
+        .bp-config-toggle-checkbox {
+            display: none!important;
+        }
+        .bp-config-toggle-label-close {
+            display: none!important;
+        }
+        .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label {
+            color: #ffffff;
+            background-color: #dc3545
+        }
+        .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label .bp-config-toggle-label-open {
+            display: none!important;
+        }
+        .bp-config-toggle-checkbox:checked ~ .bp-config-toggle-label .bp-config-toggle-label-close {
+            display: block!important;
+        }
+        .bp-config-toggle-checkbox:checked ~ .bp-config-panel {
+            display: block!important;
+            margin-right: 0;
+        }
+        .bp-title {
+            padding: 25px;
+            font-size: 18px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+        }
+        .bp-config-panel {
+            overflow: auto;
+            width: 350px;
+            margin-right: -350px;
+            height: 100%;
+            background-color: #ffffff;
+            box-shadow: -5px 0 15px -1px rgba(0,0,0,.1)
+        }
+        .bp-panel-body + .bp-panel-body {
+            border-top: 1px solid #f2f2f2;
+        }
+        .bp-panel-body {
+            padding: 35px 25px;
+        }
+        .bp-panel-headline {
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .bp-panel-list {
+            margin: -2px;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .bp-panel-list-columns .bp-panel-list-item {
+            width: 50%;
+        }
+        .bp-panel-list-item {
+            width: 100%;
+            padding: 2px;
+            margin: 0;
+        }
+        .bp-panel-list-item-link {
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #eaeaea;
+        }
+        .bp-panel-list-item-link:hover {
+            color: #333;
+            background-color: #f2f2f2;
+            text-decoration: none;
+        }
+        .bp-panel-list-item-active .bp-panel-list-item-link {
+            color: #fff;
+            border-color: #111;
+            background-color: #333;
+        }
+        .bp-panel-list-item-active .bp-panel-list-item-link:hover {
+            color: #fff;
+            border-color: #222;
+            background-color: #444;
+        }
+        .bp-panel-list-item-link-colorbox {
+            height: 16px;
+            width: 16px;
+            margin-right: 10px;
+        }
+        .bp-panel-config {
+            border-radius: 5px;
+            padding: 15px;
+            margin: 0;
+            background-color: #efefef;
+        }
+    </style>
+</f:section>
