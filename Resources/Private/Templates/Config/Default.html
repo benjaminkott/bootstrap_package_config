@@ -12,7 +12,7 @@
             <div class="bp-panel-headline">
                 Colors
             </div>
-            <ul class="bp-panel-list bp-panel-list-columns">
+            <div class="bp-panel-list bp-panel-list-columns">
                 <f:for each="{settings.colors}" as="color">
                     <div class="bp-panel-list-item{f:if(condition: '{currentColor} == {color.value}', then: ' bp-panel-list-item-active')}">
                         <f:link.page class="bp-panel-list-item-link" addQueryString="1" additionalParams="{color: color.value}">
@@ -21,13 +21,13 @@
                         </f:link.page>
                     </div> 
                 </f:for>
-            </ul>
+            </div>
         </div>
         <div class="bp-panel-body">
             <div class="bp-panel-headline">
                 Fonts
             </div>
-            <ul class="bp-panel-list">
+            <div class="bp-panel-list">
                 <f:for each="{settings.fonts}" as="font">
                     <div class="bp-panel-list-item{f:if(condition: '{currentFont} == {font.value}', then: ' bp-panel-list-item-active')}">
                         <f:link.page class="bp-panel-list-item-link" addQueryString="1" additionalParams="{font: font.value}">
@@ -35,7 +35,7 @@
                         </f:link.page>
                     </div> 
                 </f:for>
-            </ul>
+            </div>
         </div>
         <div class="bp-panel-body">
             <div class="bp-panel-headline">
