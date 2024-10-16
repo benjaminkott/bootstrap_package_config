@@ -13,7 +13,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'plugin',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-12.4.99',
+            'typo3' => '10.4.0-13.4.99',
             'bootstrap_package' => '*'
         ],
     ],
@@ -23,9 +23,6 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
     'author' => 'Benjamin Kott',
     'author_email' => 'info@bk2k.info',
     'author_company' => 'private',
