@@ -1,0 +1,27 @@
+############
+### PAGE ###
+############
+page.1553801170 = FLUIDTEMPLATE
+page.1553801170 {
+    templateName = Default
+    templateRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Templates/Config/
+    }
+    partialRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Partials/Config/
+    }
+    layoutRootPaths {
+        0 = EXT:bootstrap_package_config/Resources/Private/Layouts/Config/
+    }
+    dataProcessing {
+        10 = BK2K\BootstrapPackageConfig\DataProcessing\ConfigurationProcessor
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    linkVars = color,font
+}

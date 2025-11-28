@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  BK2K\BootstrapPackageConfig\:
+    resource: '../Classes/*'
+
+  BK2K\BootstrapPackageConfig\Service\ConfigurationService:
+    public: true
+
+  BK2K\BootstrapPackageConfig\Middleware\ConfigurationMiddleware:
+    public: true

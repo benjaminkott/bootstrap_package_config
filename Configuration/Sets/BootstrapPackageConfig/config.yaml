@@ -1,0 +1,4 @@
+name: bootstrap-package-config
+label: 'Bootstrap Package: Config'
+dependencies:
+  - bootstrap-package/full
